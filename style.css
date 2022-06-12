@@ -1,0 +1,88 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    height:100%;
+    text-align: center;
+    background-image: url('./img/space.jpg');
+    opacity:1;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+#thecount{
+    font-family:'Roboto', sans-serif;
+    margin-top:70px;
+    line-height: 1cm;
+    letter-spacing: 8px;
+    margin-bottom:90px;
+
+}
+
+.flexing{
+    margin-bottom: 340px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.container-flexing{
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-end;
+    align-items: center;
+}
+
+.box-flexing{
+   margin-top:40px; 
+  
+}
+
+.box-flexing .box{
+    padding:50px 70px;
+    background: rgb(97, 40, 195);
+    margin-bottom: 30px;
+    border-radius: 10px;
+    color:rgb(243, 134, 226);
+   
+}
+
+.box{
+    animation-name: flip-over;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+p{
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color:white;
+    opacity:0.6;
+}
+
+#count-number{
+    font-size:70px;
+}
+
+@keyframes flip-over{
+    0%{
+        transform: scaleY(-1);
+    }
+
+    100%{
+        transform: scaleY(1);
+    }
+}
+
+
+/* Media Query */
+
+@media (max-width:456px) {
+    .flexing{
+        padding:0px;
+    }
+}
