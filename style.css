@@ -53,7 +53,7 @@ body{
 
 .box{
     animation-name: flip-over;
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
 }
 
@@ -105,7 +105,22 @@ p{
 
 @media (max-width:456px) {
     .flexing{
-        padding:0px;
+        padding:0px;   
+    }
+
+    .container-flexing{
         flex-wrap: wrap;
+    }
+}
+
+@media (max-width:769px) {
+    .container-flexing{
+        margin:10px;
+    }
+
+    .box-flexing .box{
+        padding:30px 35px;
+        justify-content: space-between;
+        margin-right: 10px;
     }
 }
