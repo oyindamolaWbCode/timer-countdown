@@ -1,22 +1,29 @@
-const dateString = new Date('july 14,2022 00:00:00').getTime();
-console.log(dateString);
+const countDownDate = new Date('july 14,2022 00:00:00').getTime();
+console.log(countDownDate);
 
-let x = setInterval(Function()){
+var myfunc = setInterval(function(){
 
-    let now = new Date().getTime();
+    var now = new Date().getTime();
+    var timeleft = countDownDate - now;
+        
+    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-    let distance = dateString - now;
+    document.getElementById("count-days").innerHTML = days + "d "
+    document.getElementById("count-hours").innerHTML = hours + "h " 
+    document.getElementById("count-min").innerHTML = minutes + "m " 
+    document.getElementById("count-sec").innerHTML = seconds + "s"
 
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    if (timeleft < 0) {
+        clearInterval(myfunc);
+        document.getElementById("count-days").innerHTML = ""
+        document.getElementById("count-hours").innerHTML = "" 
+        document.getElementById("count-min").innerHTML = ""
+        document.getElementById("count-sec").innerHTML = ""
+        document.getElementById("end").innerHTML = "YAA ITS TIME!!";
+    }
 
-    let demo = document.getElementById("counting").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+},1000)
 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("counting").innerHTML = "EXPIRED";
-  }
-}, 1000)

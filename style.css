@@ -64,7 +64,19 @@ p{
     opacity:0.6;
 }
 
-#counting{
+#count-days{
+    font-size:70px;
+}
+
+#count-hours{
+    font-size:70px;
+}
+
+#count-min{
+    font-size:70px;
+}
+
+#count-sec{
     font-size:70px;
 }
 
